@@ -1,26 +1,27 @@
 {
-  "name": "dora-plugin-webpack-hmr",
-  "version": "0.2.1",
+  "name": "dora-plugin-lutool-build-hmr",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dora-js/dora-plugin-webpack-hmr"
+    "url": "https://github.com/zhulux/dora-plugin-lutool-build-hmr"
   },
-  "homepage": "https://github.com/dora-js/dora-plugin-webpack-hmr",
-  "author": "chencheng <sorrycc@gmail.com>",
+  "homepage": "https://github.com/zhulux/dora-plugin-lutool-build-hmr",
+  "author": "borisding <borisding@zhulux.com>",
   "license": "MIT",
   "main": "./lib",
   "scripts": {
     "build": "rm -rf lib && babel src --out-dir lib --ignore __tests__",
     "test": "mocha --require babel-core/register --no-timeouts",
-    "lint": "eslint --ext .js src"
+    "lint": "eslint --fix --ext .js src",
+    "pub": "npm run build && npm publish && rm -rf lib && git push origin"
   },
   "dependencies": {
     "babel-core-resolve-enhance": "~0.1.1",
     "babel-runtime": "^6.11.6",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack-hot-middleware": "^2.13.2"
   },
   "devDependencies": {
-    "atool-build": "0.x",
+    "lutool-build": "^0.1.2",
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.4",
     "babel-eslint": "^6.0.2",
@@ -29,7 +30,7 @@
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-0": "^6.5.0",
     "dora": "0.x",
-    "dora-plugin-webpack": "0.x",
+    "dora-plugin-lutool-build": "0.x",
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^6.2.0",
     "expect": "^1.16.0",
@@ -40,8 +41,8 @@
     "supertest": "^1.1.0"
   },
   "peerDependencies": {
-    "atool-build": "0.x",
-    "dora-plugin-webpack": "0.x",
+    "lutool-build": "0.x",
+    "dora-plugin-lutool-build": "0.x",
     "dora": "0.4.x"
   },
   "babel": {

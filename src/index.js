@@ -1,5 +1,5 @@
 import hotMiddleware from 'webpack-hot-middleware';
-import webpack from 'atool-build/lib/webpack';
+import webpack from 'lutool-build/lib/webpack';
 import { join } from 'path';
 import { stringify } from 'querystring';
 
@@ -10,9 +10,9 @@ export default {
   'middleware'() {
     const compiler = this.get('compiler');
     if (!compiler) {
-      throw new Error('[error] must used together with dora-plugin-webpack');
+      throw new Error('[error] must used together with dora-plugin-lutool-build');
     }
-
+    /* eslint-disable func-names */
     return function* (next) {
       if (!middleware) {
         middleware = hotMiddleware(compiler);
@@ -28,7 +28,7 @@ export default {
       path: `http://127.0.0.1:${port}/__webpack_hmr`,
       reload: true,
     };
-    const opts = {...defaultOpts, ...query};
+    const opts = Object.assign({}, ...defaultOpts, ...query);
     const hotEntry = `webpack-hot-middleware/client?${stringify(opts)}`;
 
     function updateWebpackConfig(config) {

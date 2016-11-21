@@ -12,7 +12,7 @@ describe('index', () => {
     process.chdir(join(__dirname, './fixtures/normal'));
     dora({
       port,
-      plugins: ['dora-plugin-webpack', '../../../src/index'],
+      plugins: ['dora-plugin-lutool-build', '../../../src/index'],
       cwd: join(__dirname, './fixtures/normal'),
     });
     setTimeout(done, 2000);

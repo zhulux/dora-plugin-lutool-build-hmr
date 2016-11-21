@@ -1,16 +1,16 @@
-# dora-plugin-webpack-hmr
+# dora-plugin-lutool-build-hmr
 
-HMR plugin for dora with webpack-hot-middleware.
+HMR plugin for dora with lutool-build & webpack-hot-middleware.
 
 ---
 
 ## Usage
 
 ```bash
-$ dora --plugins webpack-hmr
+$ dora --plugins lutool-build-hmr
 
 // Disable reload if hmr get stuck
-$ dora --plugins webpack-hmr?reload=false
+$ dora --plugins lutool-build-hmr?reload=false
 ```
 
 ## Config
